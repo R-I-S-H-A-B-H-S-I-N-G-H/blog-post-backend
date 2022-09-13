@@ -1,15 +1,12 @@
 const express = require("express");
 require("dotenv").config();
 const app = express();
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 2001;
 const blogs = require("./Routes/Blogs");
 const mongoose = require("mongoose");
 const BLOG = require("./models/blogsSchema");
-// console.log(process.env.URL);
-// console.log(process.env.UID);
 
 const URL = `mongodb+srv://${process.env.UID}:${process.env.PASSWORD}@cluster0.vpid4.mongodb.net/?retryWrites=true&w=majority`;
-// console.log(URL);
 mongoose.connect(
 	URL,
 	() => console.log("connected"),
