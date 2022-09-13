@@ -1,7 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const app = express();
-const PORT = process.env.PORT || 2001;
+const PORT = process.env.PORT || 3001;
 const blogs = require("./Routes/Blogs");
 const mongoose = require("mongoose");
 const BLOG = require("./models/blogsSchema");
