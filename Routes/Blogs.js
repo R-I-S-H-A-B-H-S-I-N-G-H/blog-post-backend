@@ -1,12 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const Blogs = require("../models/blogsSchema");
+const { marked } = require("marked");
+
 async function createBlog(data) {
 	try {
 		const res = await Blogs.create({
 			title: data.title,
 			description: data.description,
-			blog: data.blog,
+			blog: marked.parse(data.blog),
 		});
 		console.log(res);
 		return [null, res];
