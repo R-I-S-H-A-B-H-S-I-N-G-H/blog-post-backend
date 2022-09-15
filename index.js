@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3001;
 const blogs = require("./Routes/Blogs");
 const mongoose = require("mongoose");
 const BLOG = require("./models/blogsSchema");
+const cors = require("cors");
 
 const URL = `mongodb+srv://${process.env.UID}:${process.env.PASSWORD}@cluster0.vpid4.mongodb.net/?retryWrites=true&w=majority`;
 mongoose.connect(
@@ -13,6 +14,7 @@ mongoose.connect(
 	(err) => console.log(err),
 );
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
