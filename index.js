@@ -23,5 +23,5 @@ app.use("/blogs", blogs);
 app.listen(PORT, () => console.log(`Listining at port ${PORT}`));
 
 app.use("/", async (req, res) => {
-	res.json("Welcome to the Blogs api :fire ");
+	res.json("Welcome to the Blogs api 🔥");
 });
